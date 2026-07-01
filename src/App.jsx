@@ -36,8 +36,8 @@ function Nav() {
     <nav className={`nav${scrolled ? ' nav--solid' : ''}`}>
       <div className="container nav__inner">
         <a href="#top" className="brand">
-          <span className="brand__mark">HR</span>
-          <span className="brand__txt">HR 운영통제 토탈 솔루션</span>
+          <span className="brand__mark">BP</span>
+          <span className="brand__txt">Business Platform</span>
         </a>
         <button className="nav__toggle" onClick={() => setOpen(v => !v)} aria-label="메뉴">☰</button>
         <div className={`nav__links${open ? ' is-open' : ''}`} onClick={() => setOpen(false)}>
@@ -549,7 +549,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <p className="footer__title">운영통제형 HR 자동화 경영관리 토탈 솔루션 · 소개</p>
+        <p className="footer__title">Business Platform · 운영통제형 HR 경영관리 · 소개</p>
         <p className="footer__meta">
           기준일 2026-07-01 · 확정 수치는 출처 명기, 불확실 항목은 <code>[가정]</code> 표기 ·
           모든 데모 데이터는 가상(합성)
