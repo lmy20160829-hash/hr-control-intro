@@ -1,0 +1,20 @@
+{
+  "name": "hr-control-intro",
+  "private": true,
+  "version": "1.0.0",
+  "description": "운영통제형 HR 자동화 과제 제안서 소개 사이트 (React)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}
