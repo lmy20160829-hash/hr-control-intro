@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import {
-  HERO, STRATEGY, PILLARS, TIMELINE, MODULES, CATALOG, CATALOG_LEGEND,
+  HERO, BUILT, STACK, STRATEGY, PILLARS, TIMELINE, MODULES, CATALOG, CATALOG_LEGEND,
   DOUZONE, MAKEBUY, BENCHMARK, PRIORITIES, PRINCIPLES, ARCHITECTURE,
   COCKPIT, ROADMAP, ROI, DIFF, NAV,
 } from './data.js'
@@ -77,6 +77,53 @@ function Hero() {
         </div>
       </div>
     </header>
+  )
+}
+
+/* ---------- 구현 현황 (라이브 14개 모듈) ---------- */
+function Built() {
+  const total = BUILT.groups.reduce((n, g) => n + g.items.length, 0)
+  return (
+    <Section
+      id="built"
+      eyebrow="LIVE PoC · 실제 동작"
+      title={`실제로 동작하는 ${total}개 모듈 — 문서가 아닌 실행되는 솔루션`}
+      desc={BUILT.summary}
+    >
+      <div className="built">
+        {BUILT.groups.map(g => (
+          <article key={g.title} className="built__group" style={{ '--c': g.color }}>
+            <header className="built__ghead">
+              <h3 className="built__gtitle">{g.title}</h3>
+              <span className="built__gcount">{g.items.length}</span>
+            </header>
+            <ul className="built__list">
+              {g.items.map(it => (
+                <li key={it.no} className="built__item">
+                  <span className="built__no">{it.no}</span>
+                  <div className="built__txt">
+                    <b>{it.name}</b>
+                    <span>{it.desc}</span>
+                  </div>
+                  <span className="built__live" title="동작 검증됨">● LIVE</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+
+      <div className="stack">
+        <span className="stack__label">기술 스택</span>
+        <div className="stack__chips">
+          {STACK.map(s => <span key={s} className="stack__chip">{s}</span>)}
+        </div>
+      </div>
+      <p className="built__note">
+        ※ 로컬 <code>docker compose up</code> 한 번으로 기동 · PostgreSQL 자동 시드(합성 데이터) ·
+        <b> 폰(같은 Wi‑Fi)에서도 전 기능 사용 가능</b> · 모든 데모 데이터는 가상(합성)
+      </p>
+    </Section>
   )
 }
 
@@ -522,6 +569,7 @@ export default function App() {
       <Nav />
       <Hero />
       <main>
+        <Built />
         <Strategy />
         <Why />
         <Modules />
