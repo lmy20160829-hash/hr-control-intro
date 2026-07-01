@@ -307,3 +307,54 @@ a { color: inherit; text-decoration: none; }
   .mb__buy::before { content: 'BUY · '; font-weight: 800; color: var(--muted); }
   .mb__make::before { content: 'MAKE · '; font-weight: 800; color: var(--indigo); }
 }
+
+/* ---------- 구현 현황 (라이브 14개 모듈) ---------- */
+.built { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.built__group {
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg);
+  box-shadow: var(--shadow); overflow: hidden; border-top: 3px solid var(--c);
+}
+.built__ghead {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; background: var(--bg2); border-bottom: 1px solid var(--line);
+}
+.built__gtitle { font-size: 15px; font-weight: 800; color: var(--ink); }
+.built__gcount {
+  min-width: 26px; height: 26px; padding: 0 8px; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--c); color: #fff; font-size: 13px; font-weight: 800;
+}
+.built__list { list-style: none; padding: 8px; display: flex; flex-direction: column; gap: 4px; }
+.built__item {
+  display: flex; align-items: flex-start; gap: 10px; padding: 10px;
+  border-radius: 12px; transition: background .15s;
+}
+.built__item:hover { background: var(--bg2); }
+.built__no {
+  flex: none; width: 26px; height: 26px; border-radius: 8px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--c); color: #fff; font-weight: 800; font-size: 13px;
+}
+.built__txt { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.built__txt b { font-size: 14.5px; color: var(--ink); }
+.built__txt span { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+.built__live {
+  flex: none; align-self: center; font-size: 10.5px; font-weight: 800; letter-spacing: .04em;
+  color: #16a34a; background: #dcfce7; padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+}
+.stack { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.stack__label { font-size: 13px; font-weight: 800; color: var(--muted); letter-spacing: .04em; }
+.stack__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.stack__chip {
+  font-size: 12.5px; font-weight: 600; color: var(--slate);
+  background: var(--indigo-soft); border: 1px solid #e0e7ff;
+  padding: 5px 12px; border-radius: 999px;
+}
+.built__note { margin-top: 18px; font-size: 13px; color: var(--muted); }
+.built__note code {
+  background: var(--bg2); border: 1px solid var(--line); border-radius: 6px;
+  padding: 1px 6px; font-size: 12px;
+}
+@media (max-width: 900px) {
+  .built { grid-template-columns: 1fr; }
+}
